@@ -1,0 +1,37 @@
+# 公共参数
+case_common:
+  allureEpic: 测试项目
+  allureFeature: 基础模块
+  allureStory: 随机个人信息
+
+newPerson:
+    host: ${{host()}}
+    url: /newperson?name=MichaelWhitehead&phone=998
+    method: GET
+    detail: 随机个人信息
+    headers:
+      Content-Type: application/json;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: None
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      code:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      message:
+        jsonpath: $.message.name
+        type: ==
+        value: 'MichaelWhitehead'
+        AssertType:
+    sql:

@@ -28,11 +28,12 @@ class SendEmail:
         @param content: 发送内容
         @return:
         """
-        user = "余少琪" + "<" + config.email.send_user + ">"
+        user = "muxiafeng" + "<" + config.email.send_user + ">"
         message = MIMEText(content, _subtype='plain', _charset='utf-8')
         message['Subject'] = sub
         message['From'] = user
         message['To'] = ";".join(user_list)
+        print("邮件：", user, message)
         server = smtplib.SMTP()
         server.connect(config.email.email_host)
         server.login(config.email.send_user, config.email.stamp_key)

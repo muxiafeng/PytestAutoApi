@@ -35,7 +35,7 @@ def run():
         # 判断现有的测试用例，如果未生成测试代码，则自动生成
         # TestCaseAutomaticGeneration().get_case_automatic()
 
-        pytest.main(['-q', '-W', 'ignore:Module already imported:pytest.PytestWarning',
+        pytest.main(['-W', 'ignore:Module already imported:pytest.PytestWarning',
                      '--alluredir', './report/tmp', "--clean-alluredir"])
 
         """
@@ -67,7 +67,7 @@ def run():
             ErrorCaseExcel().write_case()
 
         # 程序运行之后，自动启动报告，如果不想启动报告，可注释这段代码
-        os.system(f"allure serve ./report/tmp -h 127.0.0.1 -p 9999")
+        # os.system(f"allure serve ./report/tmp -h 127.0.0.1 -p 9999")
 
     except Exception:
         # 如有异常，相关异常发送邮件

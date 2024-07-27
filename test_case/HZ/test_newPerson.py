@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2024-07-23 16:49:56
+# @Time   : 2024-07-26 14:58:10
 
 
 import allure
@@ -12,7 +12,7 @@ from utils.read_files_tools.regular_control import regular
 from utils.requests_tool.teardown_control import TearDownHandler
 
 
-case_id = ['newPerson']
+case_id = ['new_person_01', 'new_person_02', 'new_person_03', 'new_person_04', 'new_person_05']
 TestData = GetTestCase.case_data(case_id)
 re_data = regular(str(TestData))
 
@@ -21,7 +21,7 @@ re_data = regular(str(TestData))
 @allure.feature("基础模块")
 class TestNewperson:
 
-    @allure.story("随机个人信息")
+    @allure.story("个人信息展示")
     @pytest.mark.parametrize('in_data', eval(re_data), ids=[i['detail'] for i in TestData])
     def test_newPerson(self, in_data, case_skip):
         """
@@ -36,3 +36,4 @@ class TestNewperson:
 
 if __name__ == '__main__':
     pytest.main(['test_newPerson.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning'])
+    # pytest.main(['test_newPerson.py', '-q', '-W', 'ignore:Module already imported:pytest.PytestWarning'])

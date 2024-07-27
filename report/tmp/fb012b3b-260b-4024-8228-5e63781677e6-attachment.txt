@@ -1,0 +1,15 @@
+[32m[2024-07-26 09:41:11,447] [D:\pythonProject\PytestAutoApi\logs\info-2024-07-26.log] [INFO]: 
+======================================================
+用例标题: 正常登录后鉴定
+请求路径: http://121.37.220.0:5000/authenticate
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'cookie': 'base64=dXNlcjJsb2dpblN1Y2Nlc3M=;'}
+请求内容: None
+接口响应内容: {
+  "code": 200, 
+  "message": "\u9274\u5b9auser2\u767b\u5f55\u6210\u529f\uff01"
+}
+
+接口响应时长: 17 ms
+Http状态码: 200
+=====================================================[0m

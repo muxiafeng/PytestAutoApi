@@ -2,21 +2,20 @@
 case_common:
   allureEpic: 测试项目
   allureFeature: 基础模块
-  allureStory: 随机个人信息
+  allureStory: 个人信息展示
 
-newPerson:
+new_person_01:
     host: ${{host()}}
-    url: /newperson?name=MichaelWhitehead&phone=998
+    url: /newperson?name=赵然&phone=123
     method: GET
-    detail: 随机个人信息
+    detail: 中文名
     headers:
       Content-Type: application/json;
     # 请求的数据，是 params 还是 json、或者file、data
-    requestType: None
+    requestType: params
     # 是否执行，空或者 true 都会执行
     is_run:
     data:
-
       # 是否有依赖业务，为空或者false则表示没有
     dependence_case: False
         # 依赖的数据
@@ -32,6 +31,145 @@ newPerson:
       message:
         jsonpath: $.message.name
         type: ==
-        value: 'MichaelWhitehead'
+        value: '赵然'
         AssertType:
     sql:
+
+new_person_02:
+    host: ${{host()}}
+    url: /newperson?name=OFHOijsoij&phone=456
+    method: GET
+    detail: 英文名
+    headers:
+      Content-Type: application/json;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: params
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      code:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      message:
+        jsonpath: $.message.phone
+        type: ==
+        value: '456'
+        AssertType:
+    sql:
+
+new_person_03:
+    host: ${{host()}}
+    url: /newperson
+    method: GET
+    detail: 空手机号
+    headers:
+      Content-Type: application/json;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: params
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      name : '赵然'
+      phone :
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      code:
+        jsonpath: $.code
+        type: ==
+        value: 0
+        AssertType:
+      # 断言接口返回的username
+      message:
+        jsonpath: $.message
+        type: ==
+        value: 'error'
+        AssertType:
+    sql:
+
+new_person_04:
+    host: ${{host()}}
+    url: /newperson
+    method: GET
+    detail: 长号码
+    headers:
+      Content-Type: application/json;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: params
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      name : zhaoran
+      phone : $cache{phone_01}
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: True
+        # 依赖的数据
+    dependence_case_data:
+        - case_id: personinfo_01
+          dependent_data:
+              - dependent_type: response
+                jsonpath: $.message.phone
+                set_cache: phone_01
+    assert:
+      status_code: 200
+      # 断言接口状态码
+#      code:
+#        jsonpath: $.code
+#        type: ==
+#        value: 200
+#        AssertType:
+#      # 断言接口返回的username
+#      message:
+#        jsonpath: $.message.phone
+#        type: ==
+#        value: $cache{phone_01}
+#        AssertType:
+    sql:
+
+new_person_05:
+    host: ${{host()}}
+    url: /newperson
+    method: GET
+    detail: 对比数据库
+    headers:
+      Content-Type: application/json;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: params
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      name : hongzhi
+      phone : 123123
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      code:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+      # 断言接口返回的username
+      message:
+        jsonpath: $.message.name
+        type: ==
+        value: $.wordexplain
+        AssertType: SQL
+    sql:
+      - SELECT wordexplain FROM hongzhi.englishword WHERE word = 'bloc'
+      - SELECT user FROM hongzhi.dailyMeeting ORDER BY id DESC limit 1
+    teardown:

@@ -1,0 +1,19 @@
+INFO     D:\pythonProject\PytestAutoApi\logs\info-2024-07-26.log:log_decorator.py:42 
+======================================================
+用例标题: 随机个人信息
+请求路径: http://121.37.220.0:5000/personinfo
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;'}
+请求内容: None
+接口响应内容: {
+  "code": 200, 
+  "message": {
+    "address": "25152 Lloyd Harbor Suite 455\nSouth Spencer, NY 66783", 
+    "name": "Jessica Howard", 
+    "phone": "542-960-1047x949"
+  }
+}
+
+接口响应时长: 30 ms
+Http状态码: 200
+=====================================================

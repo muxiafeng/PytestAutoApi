@@ -1,0 +1,15 @@
+INFO     D:\pythonProject\PytestAutoApi\logs\info-2024-07-26.log:log_decorator.py:42 
+======================================================
+用例标题: 获取大乐透信息
+请求路径: http://121.37.220.0:5000/daletou
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;'}
+请求内容: None
+接口响应内容: {
+  "code": 200, 
+  "message": "\u7b2c24085\u671f\u5927\u4e50\u900f\u5f00\u5956\u65f6\u95f4\uff1a2024-07-24\uff0c\u5f00\u5956\u53f7\u7801\u4e3a\uff1a02 09 16 29 35 01 06"
+}
+
+接口响应时长: 241 ms
+Http状态码: 200
+=====================================================

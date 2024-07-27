@@ -1,5 +1,1 @@
-{
-  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
-  "name" : "categories",
-  "children" : [ ]
-}
+{"uid":"4b4757e66a1912dae1a509f688f20b0f","name":"categories","children":[{"name":"Product defects","children":[{"name":"AssertionError","children":[{"name":"test_login[输入错误的密码_1]","uid":"87c044ca6f414d6d","parentUid":"a0017ad855102fea08b8682d27fec4ca","status":"failed","time":{"start":1721958071820,"stop":1721958071839,"duration":19},"flaky":false,"newFailed":false,"newPassed":false,"newBroken":false,"retriesCount":0,"retriesStatusChange":false,"parameters":["{'url': 'http://121.37.220.0:5000/login', 'method': 'POST', 'detail': '输入错误的密码', 'assert_data': {'code': {'jsonpath': '$.code', 'type': '==', 'value': 200, 'AssertType': None}}, 'headers': {'Content-Type': 'application/json;'}, 'requestType': 'JSON', 'is_run': None, 'data': {'username': 'user1', 'password': 'password111'}, 'dependence_case': False, 'dependence_case_data': None, 'sql': None, 'setup_sql': None, 'status_code': None, 'teardown_sql': None, 'teardown': None, 'current_request_set_cache': None, 'sleep': None}"],"tags":[]}],"uid":"a0017ad855102fea08b8682d27fec4ca"}],"uid":"8fb3a91ba5aaf9de24cc8a92edc82b5d"}]}

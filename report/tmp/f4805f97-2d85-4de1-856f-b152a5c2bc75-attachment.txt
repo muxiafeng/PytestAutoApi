@@ -1,0 +1,15 @@
+INFO     D:\pythonProject\PytestAutoApi\logs\info-2024-07-26.log:log_decorator.py:42 
+======================================================
+用例标题: 空手机号
+请求路径: http://121.37.220.0:5000/newperson?name=%E8%B5%B5%E7%84%B6&phone
+请求方式: GET
+请求头:   {'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;'}
+请求内容: None
+接口响应内容: {
+  "code": 0, 
+  "message": "error"
+}
+
+接口响应时长: 38 ms
+Http状态码: 200
+=====================================================

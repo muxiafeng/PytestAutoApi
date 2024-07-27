@@ -35,7 +35,7 @@ def run():
         # 判断现有的测试用例，如果未生成测试代码，则自动生成
         # TestCaseAutomaticGeneration().get_case_automatic()
 
-        pytest.main(['-W', 'ignore:Module already imported:pytest.PytestWarning',
+        pytest.main(['-q', '-W', 'ignore:Module already imported:pytest.PytestWarning',
                      '--alluredir', './report/tmp', "--clean-alluredir"])
 
         """
@@ -46,7 +46,7 @@ def run():
                    -q: 简化输出信息
                    -m: 运行指定标签的测试用例
                    -x: 一旦错误，则停止运行
-                   --maxfail: 设置最大失败次数，当超出这个阈值时，则不会在执行测试用例
+                   --maxfail: 设置最大失败次数，当超出这个阈值时，则不会在执行测试用例l
                     "--reruns=3", "--reruns-delay=2"
                    """
 

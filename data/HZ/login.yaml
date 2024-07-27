@@ -1,0 +1,127 @@
+# 公共参数
+case_common:
+  allureEpic: 测试项目
+  allureFeature: 基础模块
+  allureStory: 登录模块
+
+login_01:
+    host: ${{host()}}
+    url: /login
+    method: POST
+    detail: 正常登录user1
+    headers:
+      Content-Type: application/json;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      {
+        "username": "user1",
+        "password": "password1"
+      }
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      code:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+    sql:
+
+login_02:
+    host: ${{host()}}
+    url: /login
+    method: POST
+    detail: 输入错误的密码
+    headers:
+      Content-Type: application/json;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      {
+        "username": "user1",
+        "password": "password11"
+      }
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      code:
+        jsonpath: $.code
+        type: ==
+        value: '401'
+        AssertType:
+      # 断言接口返回的username
+      message:
+        jsonpath: $.message
+        type: ==
+        value: "Invalid username or password"
+        AssertType:
+    sql:
+
+login_03:
+    host: ${{host()}}
+    url: /login
+    method: POST
+    detail: 输入错误的密码
+    headers:
+      Content-Type: application/json;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      {
+        "username": "user1",
+        "password": "password111"
+      }
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      code:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+    sql:
+
+login_04:
+    host: ${{host()}}
+    url: /login
+    method: POST
+    detail: 正常登录user2
+    headers:
+      Content-Type: application/json;
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: json
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      {
+        "username": "user2",
+        "password": "password2"
+      }
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      # 断言接口状态码
+      code:
+        jsonpath: $.code
+        type: ==
+        value: 200
+        AssertType:
+    sql:

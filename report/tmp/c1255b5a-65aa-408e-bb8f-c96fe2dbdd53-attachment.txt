@@ -1,0 +1,15 @@
+ERROR    D:\pythonProject\PytestAutoApi\logs\error-2024-07-26.log:log_decorator.py:45 
+======================================================
+用例标题: 输入错误的密码
+请求路径: http://121.37.220.0:5000/login
+请求方式: POST
+请求头:   {'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;', 'Content-Length': '48'}
+请求内容: {'username': 'user1', 'password': 'password111'}
+接口响应内容: {
+  "code": "401", 
+  "message": "Invalid username or password"
+}
+
+接口响应时长: 15 ms
+Http状态码: 401
+=====================================================

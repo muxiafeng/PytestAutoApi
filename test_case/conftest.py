@@ -29,16 +29,17 @@ def work_login_init():
     :return:
     """
 
-    url = "https://www.wanandroid.com/user/login"
-    data = {
-        "username": 18800000001,
-        "password": 123456
-    }
-    headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+    url = "http://121.37.220.0:5000/login"
+    data = """{
+        "username": "user2",
+        "password": "password2"
+    }"""
+    headers = {'Content-Type': 'application/json'}
     # 请求登录接口
 
     res = requests.post(url=url, data=data, verify=True, headers=headers)
     response_cookie = res.cookies
+    # print('获取的cookie为：', res.cookies)
 
     cookies = ''
     for k, v in response_cookie.items():

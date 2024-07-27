@@ -33,7 +33,7 @@ class SendEmail:
         message['Subject'] = sub
         message['From'] = user
         message['To'] = ";".join(user_list)
-        print("邮件：", user, message)
+        # print("邮件：", user, message)
         server = smtplib.SMTP()
         server.connect(config.email.email_host)
         server.login(config.email.send_user, config.email.stamp_key)
@@ -63,7 +63,7 @@ class SendEmail:
 
         sub = config.project_name + "接口自动化报告"
         content = f"""
-        各位同事, 大家好:
+        大家好:
             自动化用例执行完成，执行结果如下:
             用例运行总数: {self.metrics.total} 个
             通过用例个数: {self.metrics.passed} 个
@@ -73,11 +73,11 @@ class SendEmail:
             成  功   率: {self.metrics.pass_rate} %
 
         {self.allure_data.get_failed_cases_detail()}
-
-        **********************************
-        jenkins地址：https://121.xx.xx.47:8989/login
-        详细情况可登录jenkins平台查看，非相关负责人员可忽略此消息。谢谢。
         """
+        # **********************************
+        # jenkins地址：https://121.xx.xx.47:8989/login
+        # 详细情况可登录jenkins平台查看，非相关负责人员可忽略此消息。谢谢。
+        # """
         self.send_mail(user_list, sub, content)
 
 

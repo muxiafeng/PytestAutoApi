@@ -31,6 +31,6 @@ daletou:
       message:
         jsonpath: $.message
         type: contains
-        value: '24084'
+        value: '开奖号码'
         AssertType:
     sql:

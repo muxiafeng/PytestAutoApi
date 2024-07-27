@@ -85,7 +85,7 @@ class WeChatSend:
 
     def send_wechat_notification(self):
         """ 发送企业微信通知 """
-        text = f"""【{config.project_name}自动化通知】
+        text1 = f"""【{config.project_name}自动化通知】
                                     >测试环境：<font color=\"info\">TEST</font>
                                     >测试负责人：@{config.tester_name}
                                     >
@@ -101,6 +101,19 @@ class WeChatSend:
                                     >
                                     >非相关负责人员可忽略此消息。
                                     >测试报告，点击查看>>[测试报告入口](http://{get_host_ip()}:9999/index.html)"""
+        text = f"""【{config.project_name}自动化通知】
+                                    >测试环境：<font color=\"info\">TEST</font>
+                                    >测试负责人：@{config.tester_name}
+                                    >
+                                    > **执行结果**
+                                    ><font color=\"info\">成  功  率  : {self.metrics.pass_rate}%</font>
+                                    >用例  总数：<font color=\"info\">{self.metrics.total}</font>                                    
+                                    >成功用例数：<font color=\"info\">{self.metrics.passed}</font>
+                                    >失败用例数：`{self.metrics.failed}个`
+                                    >异常用例数：`{self.metrics.broken}个`
+                                    >跳过用例数：<font color=\"warning\">{self.metrics.skipped}个</font>
+                                    >用例执行时长：<font color=\"warning\">{self.metrics.time} s</font>
+                                    >时间：<font color=\"comment\">{now_time()}</font>"""
 
         WeChatSend(AllureFileClean().get_case_count()).send_markdown(text)
 

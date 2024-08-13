@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time   : 2024-07-26 14:58:10
+# @Time   : 2024-08-05 15:11:00
 
 
 import allure
@@ -12,7 +12,7 @@ from utils.read_files_tools.regular_control import regular
 from utils.requests_tool.teardown_control import TearDownHandler
 
 
-case_id = ['new_person_01', 'new_person_02', 'new_person_03', 'new_person_04', 'new_person_05']
+case_id = ['new_person_01', 'new_person_02', 'new_person_03', 'new_person_04', 'new_person_05', 'new_person_06']
 TestData = GetTestCase.case_data(case_id)
 re_data = regular(str(TestData))
 
@@ -36,4 +36,3 @@ class TestNewperson:
 
 if __name__ == '__main__':
     pytest.main(['test_newPerson.py', '-s', '-W', 'ignore:Module already imported:pytest.PytestWarning'])
-    # pytest.main(['test_newPerson.py', '-q', '-W', 'ignore:Module already imported:pytest.PytestWarning'])

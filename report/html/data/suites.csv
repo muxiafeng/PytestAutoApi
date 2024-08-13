@@ -2,52 +2,56 @@
 "
         :param :
         :return:
-        ","24","test_login[正常登录user2]","test_case.HZ","Fri Jul 26 09:41:12 CST 2024","passed","Fri Jul 26 09:41:12 CST 2024","TestLogin","test_login","",""
+        ","42","test_personinfo[随机个人信息]","test_case.HZ","Fri Aug 02 11:11:37 CST 2024","passed","Fri Aug 02 11:11:37 CST 2024","TestPersoninfo","test_personinfo","",""
 "
         :param :
         :return:
-        ","20","test_login[正常登录user1]","test_case.HZ","Fri Jul 26 09:41:11 CST 2024","passed","Fri Jul 26 09:41:11 CST 2024","TestLogin","test_login","",""
+        ","82","test_daletou[获取大乐透信息]","test_case.HZ","Fri Aug 02 11:11:36 CST 2024","passed","Fri Aug 02 11:11:36 CST 2024","TestDaletou","test_daletou","",""
 "
         :param :
         :return:
-        ","19","test_login[输入错误的密码_1]","test_case.HZ","Fri Jul 26 09:41:11 CST 2024","failed","Fri Jul 26 09:41:11 CST 2024","TestLogin","test_login","",""
+        ","21","test_error[错误页面]","test_case.HZ","Fri Aug 02 11:11:36 CST 2024","passed","Fri Aug 02 11:11:36 CST 2024","TestError","test_error","",""
 "
         :param :
         :return:
-        ","44","test_newPerson[空手机号]","test_case.HZ","Fri Jul 26 09:41:12 CST 2024","passed","Fri Jul 26 09:41:12 CST 2024","TestNewperson","test_newPerson","",""
+        ","16","test_login[输入错误的密码_0]","test_case.HZ","Fri Aug 02 11:11:36 CST 2024","passed","Fri Aug 02 11:11:36 CST 2024","TestLogin","test_login","",""
 "
         :param :
         :return:
-        ","21","test_login[输入错误的密码_0]","test_case.HZ","Fri Jul 26 09:41:11 CST 2024","passed","Fri Jul 26 09:41:11 CST 2024","TestLogin","test_login","",""
+        ","35","test_newPerson[英文名]","test_case.HZ","Fri Aug 02 11:11:37 CST 2024","passed","Fri Aug 02 11:11:37 CST 2024","TestNewperson","test_newPerson","",""
 "
         :param :
         :return:
-        ","48","test_newPerson[中文名]","test_case.HZ","Fri Jul 26 09:41:12 CST 2024","passed","Fri Jul 26 09:41:12 CST 2024","TestNewperson","test_newPerson","",""
+        ","40","test_newPerson[中文名]","test_case.HZ","Fri Aug 02 11:11:37 CST 2024","passed","Fri Aug 02 11:11:37 CST 2024","TestNewperson","test_newPerson","",""
 "
         :param :
         :return:
-        ","134","test_newPerson[长号码]","test_case.HZ","Fri Jul 26 09:41:12 CST 2024","passed","Fri Jul 26 09:41:12 CST 2024","TestNewperson","test_newPerson","",""
+        ","21","test_login[正常登录user1]","test_case.HZ","Fri Aug 02 11:11:36 CST 2024","passed","Fri Aug 02 11:11:36 CST 2024","TestLogin","test_login","",""
 "
         :param :
         :return:
-        ","28","test_authenticate[错误cookie鉴定]","test_case.HZ","Fri Jul 26 09:41:11 CST 2024","passed","Fri Jul 26 09:41:11 CST 2024","TestAuthenticate","test_authenticate","",""
+        ","25","test_authenticate[正常登录后鉴定]","test_case.HZ","Fri Aug 02 11:11:36 CST 2024","passed","Fri Aug 02 11:11:36 CST 2024","TestAuthenticate","test_authenticate","",""
 "
         :param :
         :return:
-        ","23","test_authenticate[正常登录后鉴定]","test_case.HZ","Fri Jul 26 09:41:11 CST 2024","passed","Fri Jul 26 09:41:11 CST 2024","TestAuthenticate","test_authenticate","",""
+        ","39","test_newPerson[空手机号]","test_case.HZ","Fri Aug 02 11:11:37 CST 2024","passed","Fri Aug 02 11:11:37 CST 2024","TestNewperson","test_newPerson","",""
 "
         :param :
         :return:
-        ","248","test_daletou[获取大乐透信息]","test_case.HZ","Fri Jul 26 09:41:11 CST 2024","passed","Fri Jul 26 09:41:11 CST 2024","TestDaletou","test_daletou","",""
+        ","29","test_authenticate[错误cookie鉴定]","test_case.HZ","Fri Aug 02 11:11:36 CST 2024","passed","Fri Aug 02 11:11:36 CST 2024","TestAuthenticate","test_authenticate","",""
 "
         :param :
         :return:
-        ","38","test_personinfo[随机个人信息]","test_case.HZ","Fri Jul 26 09:41:12 CST 2024","passed","Fri Jul 26 09:41:12 CST 2024","TestPersoninfo","test_personinfo","",""
+        ","88","test_newPerson[对比数据库]","test_case.HZ","Fri Aug 02 11:11:37 CST 2024","failed","Fri Aug 02 11:11:37 CST 2024","TestNewperson","test_newPerson","",""
 "
         :param :
         :return:
-        ","19","test_error[错误页面]","test_case.HZ","Fri Jul 26 09:41:11 CST 2024","passed","Fri Jul 26 09:41:11 CST 2024","TestError","test_error","",""
+        ","17","test_login[输入错误的密码_1]","test_case.HZ","Fri Aug 02 11:11:36 CST 2024","failed","Fri Aug 02 11:11:36 CST 2024","TestLogin","test_login","",""
 "
         :param :
         :return:
-        ","49","test_newPerson[英文名]","test_case.HZ","Fri Jul 26 09:41:12 CST 2024","passed","Fri Jul 26 09:41:12 CST 2024","TestNewperson","test_newPerson","",""
+        ","30","test_login[正常登录user2]","test_case.HZ","Fri Aug 02 11:11:37 CST 2024","passed","Fri Aug 02 11:11:37 CST 2024","TestLogin","test_login","",""
+"
+        :param :
+        :return:
+        ","123","test_newPerson[长号码]","test_case.HZ","Fri Aug 02 11:11:37 CST 2024","passed","Fri Aug 02 11:11:37 CST 2024","TestNewperson","test_newPerson","",""

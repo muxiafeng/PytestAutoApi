@@ -3,18 +3,19 @@
 # @Time   : 2022/3/29 15:01
 # @Author : 余少琪
 import os
-import sys
 import traceback
+
 import pytest
-from utils.other_tools.models import NotificationType
-from utils.other_tools.allure_data.allure_report_data import AllureFileClean
-from utils.logging_tool.log_control import INFO
-from utils.notify.wechat_send import WeChatSend
-from utils.notify.ding_talk import DingTalkSendMsg
-from utils.notify.send_mail import SendEmail
-from utils.notify.lark import FeiShuTalkChatBot
-from utils.other_tools.allure_data.error_case_excel import ErrorCaseExcel
+
 from utils import config
+from utils.logging_tool.log_control import INFO
+from utils.notify.ding_talk import DingTalkSendMsg
+from utils.notify.lark import FeiShuTalkChatBot
+from utils.notify.send_mail import SendEmail
+from utils.notify.wechat_send import WeChatSend
+from utils.other_tools.allure_data.allure_report_data import AllureFileClean
+from utils.other_tools.allure_data.error_case_excel import ErrorCaseExcel
+from utils.other_tools.models import NotificationType
 
 
 def run():
@@ -22,13 +23,15 @@ def run():
     try:
         INFO.logger.info(
             """
-                             _    _         _      _____         _
-              __ _ _ __ (_)  / \\  _   _| |_ __|_   _|__  ___| |_
-             / _` | '_ \\| | / _ \\| | | | __/ _ \\| |/ _ \\/ __| __|
-            | (_| | |_) | |/ ___ \\ |_| | || (_) | |  __/\\__ \\ |_
-             \\__,_| .__/|_/_/   \\_\\__,_|\\__\\___/|_|\\___||___/\\__|
-                  |_|
-                  开始执行{}项目...
+                         
+             █████╗   ██████╗   ██╗   █████╗   ██╗   ██╗  ████████╗   ██████╗ 
+            ██╔══██╗  ██╔══██╗  ██║  ██╔══██╗  ██║   ██║  ╚══██╔══╝  ██╔═══██╗
+            ███████║  ██████╔╝  ██║  ███████║  ██║   ██║     ██║     ██║   ██║
+            ██╔══██║  ██╔═══╝   ██║  ██╔══██║  ██║   ██║     ██║     ██║   ██║
+            ██║  ██║  ██║       ██║  ██║  ██║  ╚██████╔╝     ██║     ╚██████╔╝
+            ╚═╝  ╚═╝  ╚═╝       ╚═╝  ╚═╝  ╚═╝   ╚═════╝      ╚═╝      ╚═════╝ 
+                                                                  
+            开始执行{}项目...
                 """.format(config.project_name)
         )
 
@@ -46,7 +49,7 @@ def run():
                    -q: 简化输出信息
                    -m: 运行指定标签的测试用例
                    -x: 一旦错误，则停止运行
-                   --maxfail: 设置最大失败次数，当超出这个阈值时，则不会在执行测试用例l
+                   --maxfail: 设置最大失败次数，当超出这个阈值时，则不会在执行测试用例
                     "--reruns=3", "--reruns-delay=2"
                    """
 

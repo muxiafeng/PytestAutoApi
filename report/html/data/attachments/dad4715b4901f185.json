@@ -1,1 +1,0 @@
-"{'code': {'jsonpath': '$.code', 'type': '==', 'value': 200, 'AssertType': None}, 'message': {'jsonpath': '$.message', 'type': 'contains', 'value': '开奖号码', 'AssertType': None}}"

@@ -70,14 +70,15 @@ class FeiShuTalkChatBot:
                                 },
                                 {
                                     "tag": "at",
-                                    "user_id": "ou_18eac85d35a26f989317ad4f02e8bbbb"
-                                    # "text":"陈锐男"
+                                    # "user_id": "ou_18eac85d35a26f989317ad4f02e8bbbb"
+                                    "user_id": "all",
+                                    "text": "所有人"
                                 }
                             ],
                             [
                                 {
                                     "tag": "text",
-                                    "text": "测试  人员 : "
+                                    "text": "测 试 人 员 : "
                                 },
                                 {
                                     "tag": "text",
@@ -87,7 +88,7 @@ class FeiShuTalkChatBot:
                             [
                                 {
                                     "tag": "text",
-                                    "text": "运行  环境 : "
+                                    "text": "运 行 环 境 : "
                                 },
                                 {
                                     "tag": "text",
@@ -131,18 +132,18 @@ class FeiShuTalkChatBot:
                             [
                                 {
                                     "tag": "text",
-                                    "text": "时  间 : "
+                                    "text": "完 成 时 间 : "
                                 },
                                 {
                                     "tag": "text",
-                                    "text": f"{datetime.datetime.now().strftime('%Y-%m-%d')}"
+                                    "text": f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
                                 }
                             ],
 
                             [
                                 {
                                     "tag": "img",
-                                    "image_key": "d640eeea-4d2f-4cb3-88d8-c964fab53987",
+                                    "image_key": "img_v3_02d8_f91d5d69-b3a9-459a-a216-bf1dbaee032g",
                                     "width": 300,
                                     "height": 300
                                 }

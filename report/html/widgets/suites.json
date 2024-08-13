@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"3e30b90612d8d3977e80d2daad79d846","name":"test_case.HZ","statistic":{"failed":1,"broken":0,"skipped":0,"passed":12,"unknown":0,"total":13}}]}
+{"total":1,"items":[{"uid":"3e30b90612d8d3977e80d2daad79d846","name":"test_case.HZ","statistic":{"failed":2,"broken":0,"skipped":0,"passed":12,"unknown":0,"total":14}}]}

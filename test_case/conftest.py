@@ -2,18 +2,21 @@
 # -*- coding: utf-8 -*-
 # @Time   : 2022/3/30 14:12
 # @Author : 余少琪
-import pytest
-import time
-import allure
-import requests
 import ast
+import json
+import time
+
+import allure
+import pytest
+import requests
+
 from common.setting import ensure_path_sep
-from utils.requests_tool.request_control import cache_regular
+from utils.cache_process.cache_control import CacheHandler
 from utils.logging_tool.log_control import INFO, ERROR, WARNING
+from utils.other_tools.allure_data.allure_tools import allure_step, allure_step_no
 from utils.other_tools.models import TestCase
 from utils.read_files_tools.clean_files import del_file
-from utils.other_tools.allure_data.allure_tools import allure_step, allure_step_no
-from utils.cache_process.cache_control import CacheHandler
+from utils.requests_tool.request_control import cache_regular
 
 
 @pytest.fixture(scope="session", autouse=False)
@@ -22,8 +25,8 @@ def clear_report():
     del_file(ensure_path_sep("\\report"))
 
 
-@pytest.fixture(scope="session", autouse=True)
-def work_login_init():
+@pytest.fixture(scope="session", autouse=False)
+def work_login_init1():
     """
     获取登录的cookie
     :return:
@@ -47,6 +50,45 @@ def work_login_init():
         # 拿到登录的cookie内容，cookie拿到的是字典类型，转换成对应的格式
         cookies += _cookie
         # 将登录接口中的cookie写入缓存中，其中login_cookie是缓存名称
+    CacheHandler.update_cache(cache_name='login_cookie', value=cookies)
+
+
+@pytest.fixture(scope="session", autouse=True)
+def work_login_init():
+    """
+    获取登录的cookie
+    :return:
+    """
+
+    url = "http://121.37.220.0:1157/api/account/auth/form"
+    payload = json.dumps({
+        "type": 0,
+        "identifier": "admin",
+        "credential": "hertzbeat"
+    })
+    headers = {
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'zh-CN',
+        'Content-Type': 'application/json',
+        'Cookie': '_ga=GA1.1.49248213.1724726403; _ga_13PPZZ7P4Y=GS1.1.1724726402.1.1.1724726420.0.0.0; _dd_s=logs=1&id=4cb400da-fbfd-46d2-a562-a047a4557663&created=1724726401215&expire=1724727341593; base64=dXNlcjJsb2dpblN1Y2Nlc3M=',
+        'Origin': 'http://121.37.220.0:1157',
+        'Proxy-Connection': 'keep-alive',
+        'Referer': 'http://121.37.220.0:1157/passport/login',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
+    }
+    # 请求登录接口
+
+    res = requests.request("POST", url, headers=headers, data=payload)
+    token = (json.loads(res.content))['data']['token']
+    # print(res.text)
+
+    cookies = 'Bearer ' + token
+    # print(cookies)
+    # for k, v in response_cookie.items():
+    #     _cookie = k + "=" + v + ";"
+    #     # 拿到登录的cookie内容，cookie拿到的是字典类型，转换成对应的格式
+    #     cookies += _cookie
+    #     # 将登录接口中的cookie写入缓存中，其中login_cookie是缓存名称
     CacheHandler.update_cache(cache_name='login_cookie', value=cookies)
 
 
@@ -124,3 +166,6 @@ def pytest_terminal_summary(terminalreporter):
         INFO.logger.info("用例成功率: %.2f" % _RATE + " %")
     except ZeroDivisionError:
         INFO.logger.info("用例成功率: 0.00 %")
+
+if __name__ == '__main__':
+    work_login_init()

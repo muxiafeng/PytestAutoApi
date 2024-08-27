@@ -1,0 +1,40 @@
+# 公共参数
+case_common:
+  allureEpic: 监控项目
+  allureFeature: 监控
+  allureStory: 监控中心
+
+monitors_01:
+    host: ${{host()}}
+    url: /api/monitors
+    method: GET
+    detail: 获取监控中心列表
+    headers:
+#      Content-Type: application/json;
+      Authorization : $cache{login_cookie}
+    # 请求的数据，是 params 还是 json、或者file、data
+    requestType: params
+    # 是否执行，空或者 true 都会执行
+    is_run:
+    data:
+      pageIndex: 0
+      pageSize: 10
+      # 是否有依赖业务，为空或者false则表示没有
+    dependence_case: False
+        # 依赖的数据
+    dependence_case_data:
+    assert:
+      status_code: 200
+      # 断言接口状态码
+      code:
+        jsonpath: $.code
+        type: ==
+        value: 0
+        AssertType:
+      # 断言接口返回的username
+      message:
+        jsonpath: $.data.numberOfElements
+        type: gt
+        value: 0
+        AssertType:
+    sql:
